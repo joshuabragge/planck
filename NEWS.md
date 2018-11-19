@@ -1,5 +1,12 @@
 <!-- -*- mode: markdown; fill-column: 8192 -*- -->
 
+## v1.1
+
+*2018-11-26*
+- cleaned up qwerty to match colemak
+- removed hyper-z from prime location
+
+
 ## v1.01
 
 *2018-11-06*
