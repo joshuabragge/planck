@@ -5,7 +5,6 @@
 *2018-11-26*
 - cleaned up qwerty to match colemak
 - removed hyper-z from prime location
-- switched del and tab location
 
 
 ## v1.01
