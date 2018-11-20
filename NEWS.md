@@ -2,13 +2,12 @@
 
 ## v1.1
 
-*2018-11-27*
+*2018-11-19*
 - removed `~` from number layer.
 
-*2018-11-26*
+*2018-11-18*
 - cleaned up qwerty to match colemak.
 - removed `HYPER+Z` from base layer prime thumb real estate location.
-
 
 ## v1.01
 
