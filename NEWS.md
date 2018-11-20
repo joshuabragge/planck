@@ -9,7 +9,14 @@
 - added `HYPER` to right side of keyboard in a thumb accessable spot
 - added `LEAD+f` to send string "from:" (for outlook)
 - added `F2` to left hand. Will be able to rename files while selecting them with a mouse.
-- added `RSHIFT` to where `ENTER` was and moved `ENTER` and `"` up. 
+- added `RSHIFT` to where `ENTER` was and moved `ENTER` and `"` up.
+- moved `GUI` to far right switching places with `-/_` and bringing it into ring finger location
+- removed `=` and `-` from symbol layer.
+- MASSIVE reorganization of the symbol layer.
+
+Todo:
+- Squeeze `=` into main layout?
+- Double tap HYPER for window management layer?
 
 *2018-11-18*
 - cleaned up qwerty to match colemak.
