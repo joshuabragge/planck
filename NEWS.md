@@ -6,7 +6,8 @@
 - removed `~` from number layer.
 - added `LEAD+L` = `GUI+L` and `LEAD+U` = `CTRL+ALT+DEL`.
 - moved `ALT` over so it is more accessable with thumb for `ALT+TAB` combinations.
-- added `HYPER` to right side of keyboard in a thumb accessable spot.
+- added `HYPER` to right side of keyboard in a thumb accessable spot
+- added `LEAD+f` to send string "from:" (for outlook).
 
 *2018-11-18*
 - cleaned up qwerty to match colemak.

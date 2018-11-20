@@ -423,6 +423,9 @@ void matrix_scan_user(void) {
           unregister_code(KC_LGUI)
           unregister_code(KC_L)
         }
+        SEQ_ONE_KEY(KC_F){
+          SEND_STRING("from:");
+        }
 
         SEQ_THREE_KEYS(KC_M, KC_E, KC_H) {
         }
