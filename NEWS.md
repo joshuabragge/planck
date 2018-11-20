@@ -7,7 +7,8 @@
 - added `LEAD+L` = `GUI+L` and `LEAD+U` = `CTRL+ALT+DEL`.
 - moved `ALT` over so it is more accessable with thumb for `ALT+TAB` combinations.
 - added `HYPER` to right side of keyboard in a thumb accessable spot
-- added `LEAD+f` to send string "from:" (for outlook).
+- added `LEAD+f` to send string "from:" (for outlook)
+- added `F2` to left hand. Will be able to rename files while selecting them with a mouse. 
 
 *2018-11-18*
 - cleaned up qwerty to match colemak.
