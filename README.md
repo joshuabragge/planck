@@ -8,7 +8,7 @@ This is a colemak layout for the [Planck][planck]. This is optimized for SimCorp
 ## Table of Contents
 
 * [Layouts](#layouts)
-    - [Overview]
+    - [Overview](#overview)
 * [Building](#building)
 * [Changelog](https://github.com/joshuabragge/planck/blob/master/NEWS.md#readme)
 
