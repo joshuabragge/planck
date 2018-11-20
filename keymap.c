@@ -87,14 +87,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * |LShift|   Z  |   X  |   C  |   V  |   B  |   K  |   M  |   ,  |   .  |   /  |Enter |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | GUI  | Alt  |      | Ctrl |Lower |Space | Bksp |Raise | LEAD |      |      | -/_  |
+ * | GUI  |      | Alt  | Ctrl |Lower |Space | Bksp |Raise | LEAD |      |      | -/_  |
  * `-----------------------------------------------------------------------------------'
  */
 [_COLEMAK] = LAYOUT_planck_grid(
     KC_TAB,        KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,    KC_J,    KC_L,    KC_U,    KC_Y,    TD(CT_COL), TD(CT_ESCF4),
     KC_DEL,        KC_A,    KC_R,    KC_S,    KC_T,    KC_D,    KC_H,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT,
     KC_LSFT,       KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT ,
-    KC_LGUI,       KC_LALT, KC_NO,  KC_LCTL, LOWER,   SPACE,  BACKSPACE,  RAISE,   KC_LEAD, KC_NO, KC_NO,   TD(CT_UNDER)
+    KC_LGUI,       KC_LALT, KC_LALT,  KC_LCTL, LOWER,   SPACE,  BACKSPACE,  RAISE,   KC_LEAD, KC_NO, KC_NO,   TD(CT_UNDER)
 ),
 
 /* Dvorak
@@ -123,14 +123,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * |      |      |      |      |      |      |PrnScn|  Del | PgDwn| PgUp |Insert|      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |c+a+dl|GUI+L |      |      |      |      |      |      | Next | Vol- | Vol+ | Play |
+ * |      |      |      |      |      |      |      |      | Next | Vol- | Vol+ | Play |
  * `-----------------------------------------------------------------------------------'
  */
 [_RAISE] = LAYOUT_planck_grid(
     KC_GRV, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR,    KC_ASTR,    TD(CT_LBP), TD(CT_RBP), KC_BSLS,
     KC_DEL,  KC_MINS,   KC_EQL,   _______,   _______,   _______,   KC_HOME,   KC_LEFT,    KC_DOWN,    KC_UP,   KC_RGHT, KC_END,
     _______, _______,   _______,   _______,   _______,  _______,  KC_PSCR,  KC_DEL, KC_PGDN, KC_PGUP, KC_INSERT,  _______,
-    ALTG(KC_DELT), LGUI(KC_L), _______, _______, _______, _______, _______, _______,    KC_MNXT,    KC_VOLD, KC_VOLU, KC_MPLY
+    _______, _______, _______, _______, _______, _______, _______, _______,    KC_MNXT,    KC_VOLD, KC_VOLU, KC_MPLY
 ),
 
 /* Lower
@@ -408,6 +408,21 @@ void matrix_scan_user(void) {
   LEADER_DICTIONARY() {
         leading = false;
         leader_end();
+
+        SEQ_ONE_KEY(KC_U){
+          register_code(KC_DELT)
+          register_code(KC_LALT)
+          register_code(KC_LCTRL)
+          unregister_code(KC_DELT)
+          unregister_code(KC_LALT)
+          unregister_code(KC_LCTRL)
+        }
+        SEQ_ONE_KEY(KC_L){
+          register_code(KC_LGUI)
+          register_code(KC_L)
+          unregister_code(KC_LGUI)
+          unregister_code(KC_L)
+        }
 
         SEQ_THREE_KEYS(KC_M, KC_E, KC_H) {
         }

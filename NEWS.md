@@ -4,6 +4,8 @@
 
 *2018-11-19*
 - removed `~` from number layer.
+- added `LEAD+L` = `GUI+L` and `LEAD+U` = `CTRL+ALT+DEL`.
+- moved `ALT` over so it is more accessable with thumb for `ALT+TAB` combinations.
 
 *2018-11-18*
 - cleaned up qwerty to match colemak.
