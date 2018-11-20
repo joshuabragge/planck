@@ -128,7 +128,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_RAISE] = LAYOUT_planck_grid(
     KC_GRV,   KC_EXLM,     KC_AT,     KC_HASH,   KC_DLR,    KC_PERC,   KC_CIRC,   KC_AMPR,    KC_ASTR,    TD(CT_LBP), TD(CT_RBP), KC_BSLS,
-    _______,  KC_INSERT,   KC_HOME,   KC_PGUP,   KC_VOLU,   KC_MPLY,   KC_HOME,   KC_LEFT,    KC_DOWN,    KC_UP,      C_RGHT,     KC_END,
+    _______,  KC_INSERT,   KC_HOME,   KC_PGUP,   KC_VOLU,   KC_MPLY,   KC_HOME,   KC_LEFT,    KC_DOWN,    KC_UP,      KC_RIGHT,     KC_END,
     _______,  KC_DEL,      KC_END,    KC_PGDN,   KC_VOLD,   KC_MNXT,   _______,  _______,     _______,    _______,     _______,   _______,
     KC_PSCR,  _______,     _______,   _______,   _______,    _______,  _______,  _______,     _______,    _______,     _______,   _______
 ),
@@ -190,8 +190,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 };
-
-
 
 #ifdef AUDIO_ENABLE
   float plover_song[][2]     = SONG(PLOVER_SOUND);
@@ -410,18 +408,18 @@ void matrix_scan_user(void) {
         leader_end();
 
         SEQ_ONE_KEY(KC_U){
-          register_code(KC_DELT)
-          register_code(KC_LALT)
-          register_code(KC_LCTRL)
-          unregister_code(KC_DELT)
-          unregister_code(KC_LALT)
-          unregister_code(KC_LCTRL)
+          register_code(KC_DELT);
+          register_code(KC_LALT);
+          register_code(KC_LCTRL);
+          unregister_code(KC_DELT);
+          unregister_code(KC_LALT);
+          unregister_code(KC_LCTRL);
         }
         SEQ_ONE_KEY(KC_L){
-          register_code(KC_LGUI)
-          register_code(KC_L)
-          unregister_code(KC_LGUI)
-          unregister_code(KC_L)
+          register_code(KC_LGUI);
+          register_code(KC_L);
+          unregister_code(KC_LGUI);
+          unregister_code(KC_L);
         }
         SEQ_ONE_KEY(KC_F){
           SEND_STRING("from:");
