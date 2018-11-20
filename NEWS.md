@@ -13,13 +13,14 @@
 - moved `GUI` to far right switching places with `-/_` and bringing it into ring finger location
 - removed `=` and `-` from symbol layer.
 - MASSIVE reorganization of the symbol layer.
+- cleaned up dvorak to match colemak base layer.
 
 Todo:
 - Squeeze `=` into main layout?
 - Double tap HYPER for window management layer?
 
 *2018-11-18*
-- cleaned up qwerty to match colemak.
+- cleaned up qwerty to match colemak base layer.
 - removed `HYPER+Z` from base layer prime thumb real estate location.
 
 ## v1.01
