@@ -1,5 +1,10 @@
 <!-- -*- mode: markdown; fill-column: 8192 -*- -->
 
+## v1.2
+
+*2018-11-27*
+- removed QWERTY and DVORAK layers from adjust layer.  
+
 ## v1.1
 
 *2018-11-19*
