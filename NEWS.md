@@ -3,7 +3,8 @@
 ## v1.2
 
 *2018-11-27*
-- removed QWERTY and DVORAK layers from adjust layer.  
+- removed QWERTY and DVORAK layers from adjust layer.
+- removed space+backspace as shift - not actually usuable as the command would delete the last character. Maybe think about executing `CTRL+Z` after both have been pressed to erase the damage the command may have done? 
 
 ## v1.1
 
