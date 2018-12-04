@@ -1,5 +1,10 @@
 <!-- -*- mode: markdown; fill-column: 8192 -*- -->
 
+## v1.3 
+
+*2018-12-03*
+- change places with `DEL` and `TAB` to be consistent with ergodox build.
+
 ## v1.2
 
 *2018-11-27*
