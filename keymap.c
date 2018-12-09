@@ -409,7 +409,7 @@ void matrix_scan_user(void) {
         leading = false;
         leader_end();
 
-        SEQ_ONE_KEY(KC_U){
+         SEQ_ONE_KEY(KC_U){
           register_code(KC_DEL);
           register_code(KC_LALT);
           register_code(KC_LCTRL);
@@ -443,6 +443,12 @@ void matrix_scan_user(void) {
           register_code(KC_UP);
           unregister_code(KC_LGUI);
           unregister_code(KC_UP);
+        } 
+        SEQ_ONE_KEY (KC_E) {
+          register_code(KC_LGUI);
+          register_code(KC_E);
+          unregister_code(KC_LGUI);
+          unregister_code(KC_E);
         } 
       }
   #endif

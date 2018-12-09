@@ -7,6 +7,8 @@
 - moved `-` to `RSHIFT` to be more consistent with ergodox. `RSHIFT` is no longer needed when you have thumb shift - all the keys can be comfortably reached.
 - added `F5` to main layer to be more consistent with ergodox.
 - moved `DEL` on lower layer to be more consistent with base.
+- added `LEAD` + `W` + `M` = `GUI` + `UP`.
+- added `LEAD` + `E` = `GUI` + `E`. 
 
 *2018-12-03*
 - change places with `DEL` and `TAB` to be consistent with ergodox.
