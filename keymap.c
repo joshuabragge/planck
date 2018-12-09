@@ -426,9 +426,6 @@ void matrix_scan_user(void) {
         SEQ_ONE_KEY(KC_F){
           send_string(FROM);
         }
-
-        SEQ_THREE_KEYS(KC_M, KC_E, KC_H) {
-        }
         SEQ_ONE_KEY(KC_S) {
           send_string(SCD);
         }

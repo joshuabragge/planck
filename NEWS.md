@@ -3,8 +3,8 @@
 ## v1.3 
 
 *2018-12-09*
-- changed `LSHIFT` with `CTRL` to be more consistent with ergodox.
-- moved `-` to `RSHIFT` to be more consistent with ergodox.
+- changed `LSHIFT` with `CTRL` to be more consistent with ergodox. The thumb is better suited for a `SHIFT` key than the `CTRL` due to the "one off" nature of `CTRL` keys. 
+- moved `-` to `RSHIFT` to be more consistent with ergodox. `RSHIFT` is no longer needed when you have thumb shift - all the keys can be comfortably reached.
 - added `F5` to main layer to be more consistent with ergodox.
 - moved `DEL` on lower layer to be more consistent with base.
 
