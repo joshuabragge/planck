@@ -2,8 +2,14 @@
 
 ## v1.3 
 
+*2018-12-09*
+- changed `LSHIFT` with `CTRL` to be more consistent with ergodox.
+- moved `-` to `RSHIFT` to be more consistent with ergodox.
+- added `F5` to main layer to be more consistent with ergodox.
+- moved `DEL` on lower layer to be more consistent with base.
+
 *2018-12-03*
-- change places with `DEL` and `TAB` to be consistent with ergodox build.
+- change places with `DEL` and `TAB` to be consistent with ergodox.
 
 ## v1.2
 
