@@ -1,6 +1,10 @@
 <!-- -*- mode: markdown; fill-column: 8192 -*- -->
 
-## v1.3 
+## v1.3
+
+*2018-12-17*
+- moved around symbols on number layer to be more consistent with base layer (division and minus match base layer).
+- added hold `SPACE` for `LSHIFT`. 
 
 *2018-12-09*
 - changed `LSHIFT` with `CTRL` to be more consistent with ergodox. The thumb is better suited for a `SHIFT` key than the `CTRL` due to the "one off" nature of `CTRL` keys. 
