@@ -1,5 +1,15 @@
 <!-- -*- mode: markdown; fill-column: 8192 -*- -->
 
+## v1.4
+
+*2019-02-09*
+
+- Moved `CTRL` and `SHIFT` around. `CTRL` now better alings with keyboardio and ergodox.
+- Removed F5 and F2 as those are "work" keys and planck is used more at home.
+- Moved `LEAD` to better match location of keyboardio and ergodox.
+- Added shortcut for window management.
+- Moved `ALT` and `GUI`.S
+
 ## v1.3
 
 *2018-12-17*

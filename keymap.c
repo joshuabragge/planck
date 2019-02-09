@@ -50,6 +50,7 @@ enum custom_keycodes{
   CT_UNDER,
 };
 
+
 /* Lead Variables */
 
 const char JB[15] = "joshua.bragge";
@@ -83,20 +84,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Colemak
  * ,-----------------------------------------------------------------------------------.
- * | Del  |   Q  |   W  |   F  |   P  |   G  |   J  |   L  |   U  |   Y  |  ;/: |  '   |
+ * | Del  |   Q  |   W  |   F  |   P  |   G  |   J  |   L  |   U  |   Y  |  ; : |  '   |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * | Tab  |   A  |   R  |   S  |   T  |   D  |   H  |   N  |   E  |   I  |   O  |Enter |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * | Ctrl |   Z  |   X  |   C  |   V  |   B  |   K  |   M  |   ,  |   .  |   /  |  -/_ |
+ * |LShift|   Z  |   X  |   C  |   V  |   B  |   K  |   M  |   ,  |   .  |   /  |  - _ |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |Esc/F4|  F2  | Alt  |LShift|Lower |Space | Bksp |Raise | LEAD | HYPER|  F5  | GUI  |
+ * |Esc/F4|  ( [ |Divvy | Ctrl |Lower |Space | Bksp |Raise | Alt  | GUI  |  ) ] | LEAD |
  * `-----------------------------------------------------------------------------------'
  */
 [_COLEMAK] = LAYOUT_planck_grid(
-    KC_DEL,        KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,    KC_J,    KC_L,    KC_U,    KC_Y,    TD(CT_COL), KC_QUOT,
-    KC_TAB,        KC_A,    KC_R,    KC_S,    KC_T,    KC_D,    KC_H,    KC_N,    KC_E,    KC_I,    KC_O,    KC_ENT,
-    KC_LCTL,       KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, TD(CT_UNDER),
-    TD(CT_ESCF4),  KC_F2, KC_LALT,  KC_LSFT, LOWER,   RSFT_T(KC_SPACE),  KC_BSPC,  RAISE,   KC_LEAD, KC_HYPR, KC_F5, KC_LGUI
+    KC_DEL,        KC_Q,       KC_W,       KC_F,    KC_P,       KC_G,             KC_J,    KC_L,    KC_U,    KC_Y,    TD(CT_COL), KC_QUOT,
+    KC_TAB,        KC_A,       KC_R,       KC_S,    KC_T,       KC_D,             KC_H,    KC_N,    KC_E,    KC_I,    KC_O,       KC_ENT,
+    KC_LSFT,       KC_Z,       KC_X,       KC_C,    KC_V,       KC_B,             KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,    TD(CT_UNDER),
+    TD(CT_ESCF4),  TD(CT_LBP), MEH(KC_W),  KC_LCTL, LOWER,      RSFT_T(KC_SPACE), KC_BSPC, RAISE,   KC_LALT, KC_LGUI, TD(CT_RBP), KC_LEAD
 ),
 
 /* Dvorak
@@ -123,7 +124,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |      |Insert| Home | PgUp | Vol+ | Play | Home | Left | Down |  Up  |Right |  End |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |      | Del  | End  | PgDwn| Vol- | Next |      |      |      |      |      |      |
+ * |      | Del  | End  | PgDwn| Vol- | Next |      |      | PgDwn| PgUp |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |PrnScn|      |      |      |      |      |      |      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
@@ -131,7 +132,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_RAISE] = LAYOUT_planck_grid(
     KC_GRV,   KC_EXLM,     KC_AT,     KC_HASH,   KC_DLR,    KC_PERC,   KC_CIRC,   KC_AMPR,    KC_ASTR,    TD(CT_LBP), TD(CT_RBP), KC_BSLS,
     _______,  KC_INSERT,   KC_HOME,   KC_PGUP,   KC_VOLU,   KC_MPLY,   KC_HOME,   KC_LEFT,    KC_DOWN,    KC_UP,      KC_RIGHT,     KC_END,
-    _______,  KC_DEL,      KC_END,    KC_PGDN,   KC_VOLD,   KC_MNXT,   _______,  _______,     _______,    _______,     _______,   _______,
+    _______,  KC_DEL,      KC_END,    KC_PGDN,   KC_VOLD,   KC_MNXT,   _______,  _______,     KC_PGDN,    KC_PGUP,     _______,   _______,
     KC_PSCR,  _______,     _______,   _______,   _______,    _______,  _______,  _______,     _______,    _______,     _______,   _______
 ),
 
@@ -143,7 +144,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * |      |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |   1  |   2  |   3  |  /   |  -   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |  0   |   .  |Enter |  =   |
+ * |      |      |      |      |      |      |      |      |   0  |   .  |Enter |  =   |
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_planck_grid(
@@ -176,7 +177,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------------------------------------------------.
  * |      | Reset|      |      |      |      |      |      |      |      |      |  Del |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |      |      |      |Aud on|Audoff|AGnorm|AGswap|Qwerty|Colemk|Dvorak|Plover|      |
+ * |      |      |      |Aud on|Audoff|AGnorm|AGswap|      |Colemk|      |Plover|      |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * |      |Voice-|Voice+|Mus on|Musoff|MIDIon|MIDIof|      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
