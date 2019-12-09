@@ -1,5 +1,11 @@
 <!-- -*- mode: markdown; fill-column: 8192 -*- -->
 
+## v1.41
+
+*2019-12-09*
+
+- Added Gaming WSAD standard layout onto adjust layer (RAISE+LOWER+I)
+
 ## v1.4
 
 *2019-02-09*
