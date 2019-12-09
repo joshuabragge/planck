@@ -21,6 +21,7 @@ extern keymap_config_t keymap_config;
 
 enum planck_layers {
   _QWERTY,
+  _GMING,
   _COLEMAK,
   _DVORAK,
   _LOWER,
@@ -61,6 +62,7 @@ const char FROM[10] = "from:";
 
 #define LOWER MO(_LOWER)
 #define RAISE MO(_RAISE)
+#define GMING MO(_GMING)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -80,6 +82,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_NO,
     KC_NO, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_NO ,
     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,   KC_NO,  KC_NO,  KC_NO,   KC_NO, KC_NO, KC_NO,   KC_NO
+),
+
+
+/* Gaming
+ * ,-----------------------------------------------------------------------------------.
+ * | Caps |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  |      |
+ * |------+------+------+------+------+-------------+------+------+------+------+------|
+ * | Tab  |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   ;  | Enter|
+ * |------+------+------+------+------+------|------+------+------+------+------+------|
+ * |Shift |   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |  Up  | Esc  |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |  1   |   2  |   3  | Ctrl | Space| Alt  |      |      |      | Left | Down | Right|
+ * `-----------------------------------------------------------------------------------'
+ */
+[_GMING] = LAYOUT_planck_grid(
+    KC_CAPSLOCK,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,   COLEMAK,
+    KC_TAB,       KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,
+    KC_LSFT,      KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_UP, KC_ESCAPE ,
+    KC_1,         KC_2,    KC_3,    KC_LCTL, KC_SPACE, KC_LALT,  KC_NO,  KC_NO,   KC_NO, KC_LEFT, KC_DOWN,   KC_RIGHT
 ),
 
 /* Colemak
@@ -186,7 +207,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_ADJUST] = LAYOUT_planck_grid(
     _______, RESET,   DEBUG,   RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, KC_DEL ,
-    _______, _______, MU_MOD,  AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, _______,  COLEMAK, _______,  PLOVER,  _______,
+    _______, _______, MU_MOD,  AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, _______,  COLEMAK, GMING,  PLOVER,  _______,
     _______, MUV_DE,  MUV_IN,  MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  TERM_ON, TERM_OFF, _______, _______, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 )
@@ -230,11 +251,15 @@ static bool space_down = false;
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-    case QWERTY:
+    case GMING:
       if (record->event.pressed) {
-        print("mode just switched to qwerty and this is a huge string\n");
-        set_single_persistent_default_layer(_QWERTY);
+        print("mode just switched to _GMING and this is a huge string\n");
+        set_single_persistent_default_layer(_GMING);
         PLAY_SONG(tone_qwerty);
+        layer_off(_RAISE);
+        layer_off(_LOWER);
+        layer_off(_ADJUST);
+        layer_on(_GMING);
       }
       return false;
       break;
@@ -242,6 +267,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       if (record->event.pressed) {
         set_single_persistent_default_layer(_COLEMAK);
         PLAY_SONG(tone_colemak);
+        layer_off(_RAISE);
+        layer_off(_LOWER);
+        layer_off(_ADJUST);
+        layer_off(_GMING);
       }
       return false;
       break;
